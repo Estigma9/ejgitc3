@@ -1,23 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="img/logo-Cesde-2023.svg" type="image/x-icon">
+    <title>Cesde blog</title>
 </head>
+
 <body>
 
-    <h1>Esteban</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, obcaecati! Voluptates molestias exercitationem, corrupti quod distinctio eveniet quo officia qui cupiditate voluptatum magnam ut quis? Saepe impedit dolore adipisci corrupti?</p>
-    <h2>Somos los mejores</h2>
-    <h3>Cesde 2023</h3>
-    <h2>Somos los mejores programando</h2>
-    
+    <header>
+        <div class="logo">
+            <img src="img/logo-Cesde-2023.svg" alt="">
+        </div>
+        <ul class="menu">
+            <li class="link-menu"><a href="">Home</a></li>
+            <li class="link-menu"><a href="">About Us</a></li>
+            <li class="link-menu"><a href="">Services</a></li>
+            <li class="link-menu"><a href="">Projects</a></li>
+            <li class="link-menu"><a href="">Contact Us</a></li>
+        </ul>
+    </header>
 
-    <footer>Copyright 2023 | correo: micorreo@gmail.com</footer>
-    
+    <main>
+        <div class="container">
+            <h1>Blog CESDE</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, obcaecati! Voluptates molestias
+                exercitationem, corrupti quod distinctio eveniet quo officia qui cupiditate voluptatum magnam ut quis?
+                Saepe impedit dolore adipisci corrupti?</p>
+            <div class="blog">
+                <article>
+                    <div class="blog-img">
+                        <img src="img/logo-Cesde-2023.svg" alt="Logo">
+                    </div>
+                    <div class="blog-info">
+                        <h2>Título</h2>
+                        <h3>Subtitulo</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, obcaecati! Voluptates
+                            molestias exercitationem, corrupti quod distinctio eveniet quo officia qui cupiditate
+                            voluptatum
+                            magnam ut quis? Saepe impedit dolore adipisci corrupti?</p>
+                        <button class="btn">See more</button>
+                    </div>
+                </article>
+                <hr>
+                <article>
+                    <div class="blog-img">
+                        <img src="img/logo-Cesde-2023.svg" alt="Logo">
+                    </div>
+                    <div class="blog-info">
+                        <h2>Título</h2>
+                        <h3>Subtitulo</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, obcaecati! Voluptates
+                            molestias exercitationem, corrupti quod distinctio eveniet quo officia qui cupiditate
+                            voluptatum
+                            magnam ut quis? Saepe impedit dolore adipisci corrupti?</p>
+                        <button class="btn">See more</button>
+                    </div>
+                </article>
+            </div>
+            <aside>
+                <ul>
+                    <li>
+                        <h3>News</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </li>
+                    <li>
+                        <h3>News</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </li>
+                    <li>
+                        <h3>News</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+
+        <div class="container">
+            <div class="flex-container">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+                <div class="flex-item">6</div>
+                <div class="flex-item">7</div>
+                <div class="flex-item">8</div>
+                <div class="flex-item">9</div>
+                <div class="flex-item">10</div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            Copyright 2023 | correo: <a href="mailto:micorreo@gmail.com">micorreo@gmail.com</a>
+        </div>
+    </footer>
+
+    <script>
+        let x = 10;
+        const y = 33;
+        const multiply = (a, b) => {
+            return a * b
+        }
+
+        const result = multiply(8, 4);
+        console.log("Es:", result);
+
+        // Array
+
+        const arr = [];
+        const obj = {};
+
+        const color = ['blue', 'yellow', 'red', 'green'];
+        const polygon = { sides: 5, radius: 120 }
+        console.log(color[0]);
+        console.log(polygon.radius);
+
+        // VARS
+
+        for (let i = 0; i < color.legth; i++) {
+            console.log(i, color[i]);
+        }
+
+        // CONDITIONAL
+        const ice = 'cream';
+        console.log(ice);
+
+        const loadImage = async (url) => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve(img);
+                img.onerror = () => reject(img);
+                img.src = url;
+            });
+        };
+
+        const start = async () => {
+            const myImage = await loadImage('img/logo-Cesde-2023.svg');
+            console.log(myImage.width);
+        }
+    </script>
 </body>
+
 </html>
-
-
