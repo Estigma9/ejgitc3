@@ -46,7 +46,7 @@ var resultado = cadena1.concat(cadena2, " tres", " cuatro");
 //alert(resultado);
 
 
-// Array
+// Array (arreglos)
 
 const numerosPrimos = [2, 3, 5, 7, 11, 13, 17];
 alert(numerosPrimos);
@@ -90,18 +90,127 @@ document.getElementById("demo14").innerHTML = carro.nombreColor(); //Llamando me
 
 
 // Funciones
-let numero1 = "Pedro";
+//let numero1 = "Pedro";
 function resultadoSuma(numero1, numero2) {
     let suma = numero1 + numero2;
     return suma
 };
-document.getElementById("demo15").innerHTML = resultadoSuma(7,2);
-document.getElementById("demo16").innerHTML = numero1;
+document.getElementById("demo15").innerHTML = resultadoSuma(7, 2);
+//document.getElementById("demo16").innerHTML = numero1;
 
 
-let hacerResta = function(numero1, numero2) {
+// Segunda forma de crear función
+let hacerResta = function (numero1, numero2) {
     let resta = numero1 + numero2;
     return resta
 };
-document.getElementById("demo15").innerHTML = hacerResta(7,2);
+document.getElementById("demo15").innerHTML = hacerResta(7, 2);
 
+
+// Tercera forma de crear función por expresión
+HacerMultiplicacion = (numero1, numero2) => {
+    let multiplicar = numero1 * numero2;
+    return multiplicar;
+};
+document.getElementById("demo16").innerHTML = HacerMultiplicacion(7, 2);
+
+
+// Funciones anonimas
+/*
+function () {
+};
+
+() => {
+};
+*/
+
+
+// Eventos
+
+function TimeDate() {
+    document.getElementById("date").innerHTML = Date();
+}
+
+function SeeMore() {
+    document.getElementById("see-more").hide();
+}
+
+// Eventos Decisión logica
+function CompararNumero(a, b) {
+    if (a > b) {
+        document.getElementById("comparar").innerHTML = "A es mayor que B";
+    } else {
+        if (a < b) {
+            document.getElementById("comparar").innerHTML = `${a} es menor que ${b}`;
+        } else {
+            document.getElementById("comparar").innerHTML = `${a} es igual que ${b}`;
+        }
+    }
+};
+
+
+// Switch Case
+let day;
+switch (new Date().getDay()) {
+    case 0:
+        day = "Domingo"
+        break;
+    case 1:
+        day = "lunes"
+        break;
+    case 2:
+        day = "martes"
+        break;
+    case 3:
+        day = "miercoles"
+        break;
+    case 4:
+        day = "jueves"
+        break;
+    case 5:
+        day = "viernes"
+        break;
+    case 6:
+        day = "sabado"
+        break;
+
+    default:
+        break;
+}
+
+document.getElementById("day").innerHTML = "Hoy es " . day;
+
+
+// While
+
+let numero = 1;
+let cajaNumero = [];
+
+while (numero <= 100) {
+    cajaNumero.push(numero);
+    numero = numero +10; // o numero++
+};
+
+console.log(cajaNumero)
+document.getElementById("demo18").innerHTML = cajaNumero;
+
+
+let contador = 1;
+do {
+    //document.write("Hola");
+    contador++
+} while (contador < 5) {
+
+};
+
+// For
+let arregloPara = [];
+
+for (let i = 0; i <= 20; i++) {
+    arregloPara.push(i);
+    if (i == 16) {
+        break;
+    }
+};
+
+document.getElementById("demo19").innerHTML = arregloPara;
