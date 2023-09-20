@@ -133,17 +133,17 @@ function TimeDate() {
 
 function SeeMore() {
     var txt = document.getElementById("text-see-more");
-    var btn = document.getElementById("btn-see-more"); 
+    var btn = document.getElementById("btn-see-more");
     // etiqueta selector: document.getElementsByTagName("p"); | selector clase: document.getElementsByClassName("intro"); | document.querySelectorAll("p.intro");
     // agregar class a elemento: element.classList.add("mystyle"); | remover: element.classList.remove("mystyle");
     if (txt.style.display === "none") {
-      txt.style.display = "block";
-      btn.innerText = "Hide";
+        txt.style.display = "block";
+        btn.innerText = "Hide";
     } else {
-      txt.style.display = "none";
-      btn.innerText = "See more";
+        txt.style.display = "none";
+        btn.innerText = "See more";
     }
-  };
+};
 
 
 // Eventos Decisión logica
@@ -375,14 +375,14 @@ cultivar();
 
 var frutaTraida = "Kiwi";
 
-function almacenar(){
+function almacenar() {
     var frutaGruardada = "Mango";
     function sacarFruta() {
-        document.getElementById("demo35").innerHTML = "Sacando " + frutaTraida;      
+        document.getElementById("demo35").innerHTML = "Sacando " + frutaTraida;
     }
     sacarFruta();
 
-    document.getElementById("demo36").innerHTML = "Guardando " + frutaGruardada; 
+    document.getElementById("demo36").innerHTML = "Guardando " + frutaGruardada;
 };
 
 almacenar();
@@ -396,12 +396,157 @@ console.log(nameSurname);
 
 
 // Promise
-const myPromise = new Promise(function(myResolve, myReject) {
-    setTimeout(function(){ 
-        myResolve("I love You !!"); 
+const myPromise = new Promise(function (myResolve, myReject) {
+    setTimeout(function () {
+        myResolve("I love You !!");
     }, 3000);
-  });
-  
-  myPromise.then(function(value) {
+});
+
+myPromise.then(function (value) {
     document.getElementById("demo37").innerHTML = value;
-  });
+});
+
+
+
+// Mouse over -  out
+
+function moveOver(obj) {
+    obj.innerHTML = "Over me!";
+}
+
+function moveOut(obj) {
+    obj.innerHTML = "Out me!";
+}
+
+function mDown(obj) {
+    obj.style.backgroundColor = '#cccccc';
+    obj.innerHTML = "Click Down";
+}
+
+function mUp(obj) {
+    obj.style.backgroundColor = 'rgba(130, 45, 14, 1)';
+    obj.innerHTML = "Click Up";
+}
+
+
+// event js - escuchar eventos
+document.getElementById('btn1').addEventListener("click", () => { alert("Done") });
+
+// Escuchador event js - narración de acción
+var action = document.getElementById("btn2")
+action.addEventListener("mouseover", cover);
+action.addEventListener("click", touch);
+action.addEventListener("mouseout", release);
+
+function cover() {
+    document.getElementById("demo38").innerHTML += "Cover <br>";
+}
+
+function touch() {
+    document.getElementById("demo38").innerHTML += "Touch <br>";
+}
+
+function release() {
+    document.getElementById("demo38").innerHTML += "Release <br>";
+}
+
+
+
+/*
+class Perro extends Animal {
+    constructor (especie, edad, color, raza){
+        super(especie, edad, color);
+        this.raza = raza;
+    }
+
+    modificarRaza() {
+        this.raza = "Mongrel";
+    }
+
+    //Método estatico
+    static ladrar() {
+        document.getElementById("demo40").innerHTML = "Yo si soy un perro puedo ladrar. <br>"
+    };
+};
+
+Perro.ladrar();
+
+let perrito = new Perro ("Perro", 1, "Blue Marie", "Criollo")
+document.getElementById("demo40").innerHTML = perrito.color;
+
+perrito.modificarRaza();
+document.getElementById("demo40").innerHTML = perrito.color;
+*/
+
+
+// Json
+'{"name": "Nombre", "age": 40}';
+
+//Matriz JSON
+'{"employees": ["Ad", "Lu"], "name": "Esteban"}';
+
+const textoJSON = '{"name": "Andy", "Age": 50, "city": "Paris"}';
+
+const objJS = JSON.parse(textoJSON);
+document.getElementById("demo40").innerHTML = objJS.name + ", " + objJS.city;
+document.getElementById("demo41").innerHTML = typeof textoJSON;
+document.getElementById("demo42").innerHTML = typeof objJS;
+
+
+
+//JSON no recibe Fechas
+//Lo escribo como cadena, convierto en objeto y luego lo transformo a fecha
+const textojson2 = '{"name": "Brian", "birth": "1947-07-19", "city": "Hampton"}';
+
+const objjs2 = JSON.parse(textojson2);
+objjs2.birth = new Date(objjs2.birth);
+
+document.getElementById("demo43").innerHTML = objjs2.name + ", " + objjs2.birth;
+
+
+//JSON.stringify()
+//Convertir un Objeto en un JSON
+const objjs3 = {
+    name: "Steve",
+    age: 70,
+    city: "San José"
+};
+
+const miJSON = JSON.stringify(objjs3);
+
+document.getElementById("demo44").innerHTML = miJSON;
+
+
+//Convertir una Matriz en un JSON
+const miArreglojs2 = ["Pantera", "Tigre", "Tiburón", "Humano"];
+
+const miJSON2 = JSON.stringify(miArreglojs2);
+document.getElementById("demo45").innerHTML = miJSON2;
+
+
+/*
+CREATE TABLE empleados(
+numempleado INTEGER,
+nombre VARCHAR(45),
+apellidopaterno VARCHAR(45),
+apellidomaterno VARCHAR(45),
+fechanacimiento DATE,
+sueldo DECIMAL (7,2),
+cargo VARCHAR(45)
+);
+*/
+
+/*
+INSERT INTO empleados(numempleado, nombre, apellidopaterno, apellidomaterno, fechanacimiento, sueldo, cargo)
+VALUES(1, 'Juan Jose', 'Acevedo', 'Aguero', '1992-09-22', 100, 'contador'),
+(2, 'Ana', 'Soto', 'Ramo', '1998-01-12', 150, 'politico'),
+(3, 'Pedro', 'Coral', 'Rios', '1988-03-02', 120, 'policia');
+
+SELECT NOW();
+
+SELECT NOW();
+
+SELECT CURRENT_DATE
+
+SELECT nombre, apellidopaterno, apellidomaterno, sueldo FROM empleados
+*/
